@@ -23,6 +23,5 @@ class Discriminator:
         self.model = model
         print(model.summary())
         model.compile(optimizer=optimizer, loss='binary_crossentropy')
+        model.trainable = False
         return model
-
-    def get_discriminator(self, path = )

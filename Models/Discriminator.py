@@ -9,6 +9,7 @@ class Discriminator:
         self.model = None
 
     def create_discriminator(self, optimizer):
+        print("create the discriminator...")
         model = Sequential([
             Conv2D(32, (3,3), strides = (2,2), input_shape=self.input_shape, padding = "same"),
             LeakyReLU(),

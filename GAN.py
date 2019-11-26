@@ -36,6 +36,7 @@ class GAN():
         gan.summary()
         self.gan = gan
 
+
     def plot_generated_image(self, epoch, figure_size = (28,28,1)):
         noise = np.random.normal(loc=0, scale=1, size=[100])
         generate_image = self.generator.predict(noise).reshape(figure_size)

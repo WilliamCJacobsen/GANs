@@ -8,18 +8,14 @@ class Generator:
         self.image_shape = image_shape
         self.model = None
 
-
-#TODO: make this a Convnet.
     def create_generator(self, optimizer):
         print("create the generator...")
         model = Sequential([
-                Dense(32*32 , input_dim=self.noise_shape),
+                Dense(16*16 , input_dim=self.noise_shape),
                 BatchNormalization(momentum=0.8),
-                Reshape(target_shape=(32,32,1)),
+                Reshape(target_shape=(16,16,1)),
                 Conv2D(32,(3,3), padding='same'),
                 BatchNormalization(momentum=0.8),
-                LeakyReLU(),
-                Conv2DTranspose(filters = 64, kernel_size=  (3,3), strides = (2,2), padding= 'same'),
                 LeakyReLU(),
                 Conv2D(32,(5,5), padding='same'),
                 BatchNormalization(momentum=0.8),

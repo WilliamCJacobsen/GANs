@@ -10,8 +10,8 @@ if __name__ == "__main__":
     noise_shape = 100
     generator_output = (28,28,1)
 
-    generator = Generator(noise_shape,  generator_output).create_generator(Adam(1e-5))
-    discriminator = Discriminator(generator_output).create_discriminator(Adam(1e-5))
+    generator = Generator(noise_shape,  generator_output).create_generator(Adam(0.01))
+    discriminator = Discriminator(generator_output).create_discriminator(Adam(0.01))
 
     gan = GAN(generator = generator, discriminator = discriminator)
 

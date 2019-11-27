@@ -2,7 +2,7 @@ from keras.models import Sequential
 from keras.layers import Dense, Activation,BatchNormalization, Reshape, Conv2D, LeakyReLU, Flatten,AveragePooling2D
 import numpy as np
 
-
+#TODO: Print the loss and accuracy under trianing
 class Discriminator:
     def __init__(self, input_shape):
         self.input_shape = input_shape
